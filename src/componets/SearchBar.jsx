@@ -1,6 +1,8 @@
 import React from "react";
 
-const SearchBar = ({ input, setInput, submitHandler }) => {
+const SearchBar = ({ input, setInput, submitHandler,toggle }) => {
+
+  
     return (
         <div className="flex gap-6">
             <div className="w-full   shadow-lg rounded-lg px-4 bg-white   py-2">
@@ -12,7 +14,10 @@ const SearchBar = ({ input, setInput, submitHandler }) => {
                         placeholder="Find Something...."
                         className="w-full outline-none"
                     />
-                    <button className="py-1 px-4 text-white bg-purple-600 rounded-lg">
+                    <button
+                        className="py-1 px-4 text-white bg-purple-600 rounded-lg "
+                     
+                    >
                         Search
                     </button>
                 </form>
@@ -36,9 +41,9 @@ const SearchBar = ({ input, setInput, submitHandler }) => {
                     src="https://image.shutterstock.com/image-photo/profile-picture-smiling-millennial-asian-260nw-1836020740.jpg"
                     alt="profile"
                     className="rounded-full h-10 w-10"
-                />   <p className="mt-2">Abigail</p>
+                />{" "}
+                <p className="mt-2">Abigail</p>
             </div>
-         
         </div>
     );
 };

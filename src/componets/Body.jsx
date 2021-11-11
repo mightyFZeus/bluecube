@@ -12,6 +12,7 @@ const Body = ({
     submitHandler,
     toggleSideBar,
     toggle,
+  
 }) => {
     const { know } = sideBarItems;
     return (
@@ -21,26 +22,46 @@ const Body = ({
                     input={input}
                     setInput={setInput}
                     submitHandler={submitHandler}
+                    toggle={toggle}
                 />
             </div>
             <div className=" flex justify-between xl:hidden">
                 <p className="text-purple-600 font-black text-3xl">bluecode</p>
 
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    onClick={toggleSideBar}
-                >
-                    <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1}
-                        d="M4 6h16M4 12h16M4 18h16"
-                    />
-                </svg>
+                {!toggle && (
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        onClick={toggleSideBar}
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1}
+                            d="M4 6h16M4 12h16M4 18h16"
+                        />
+                    </svg>
+                )}
+                {toggle && (
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        onClick={toggleSideBar}
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={1}
+                            d="M6 18L18 6M6 6l12 12"
+                        />
+                    </svg>
+                )}
             </div>
             {toggle && (
                 <Slide right duration={500}>
@@ -56,7 +77,10 @@ const Body = ({
 
             <div className="md:flex hidden mt-8 ">
                 {know.map((item) => (
-                    <div className="flex  bg-white shadow-lg  border-2 px-10 py-4" key={item}>
+                    <div
+                        className="flex  bg-white shadow-lg  border-2 px-10 py-4"
+                        key={item}
+                    >
                         <p className="capitalize">{item}</p>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
