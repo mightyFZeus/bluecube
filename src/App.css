@@ -4,6 +4,16 @@
   font-family: 'Poppins',
   sans-serif;
   background-color: #FAFAFC;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
   
+}
+
+.test:hover {
+  border: 1px solid black;
+  border-color: gray;
+
 }
 

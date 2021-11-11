@@ -1,17 +1,22 @@
-import React from 'react'
-import { sideBarItems } from '../utils/data';
-import "../App.css"
+import React from "react";
+import { sideBarItems } from "../utils/data";
+import SearchBar from "./SearchBar";
 
-const Sidebar = () => {
-    const {share, firstArr,secondArr, logoText} = sideBarItems
+const Sidebar = ({input, setInput, submitHandler}) => {
+    const { share, firstArr, secondArr, logoText } = sideBarItems;
     return (
-        <div className="flex flex-col justify-center content-center">
-            <p className="text-purple-600 font-black text-3xl mb-10 hidden xl:block">
+        <div className=" ">
+            <SearchBar
+                input={input}
+                setInput={setInput}
+                submitHandler={submitHandler}
+            />
+            <p className="text-purple-600 font-black text-3xl  hidden md:block">
                 {logoText}
             </p>
             <div>
                 {firstArr.map(({ text, image }) => (
-                    <div className="flex gap-4 text-xs mb-4 text-center px-3 py-1 mt-3 test" key={text}>
+                    <div className="flex gap-4 text-xs mb-4 text-center mt-3 ">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
@@ -26,14 +31,14 @@ const Sidebar = () => {
                                 d={image}
                             />
                         </svg>
-                        <p className="mt-2">{text}</p>
+                        <p>{text}</p>
                     </div>
                 ))}
             </div>
             <p className="font-black text-lg mb-6 mt-3">{share}</p>
             <div>
                 {secondArr.map(({ text, image }) => (
-                    <div className="flex gap-4 text-xs mb-4 test px-3 py-1" key={text}>
+                    <div className="flex gap-4 text-xs mb-4">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
@@ -48,12 +53,12 @@ const Sidebar = () => {
                                 d={image}
                             />
                         </svg>
-                        <p className="mt-2">{text}</p>
+                        <p>{text}</p>
                     </div>
                 ))}
             </div>
         </div>
     );
-}
+};
 
-export default Sidebar
+export default Sidebar;
