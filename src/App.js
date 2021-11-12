@@ -69,7 +69,7 @@ const App = () => {
  
  
     if(loading) return (
-        <div className="flex flex-col justify-center content-center">
+        <div className="flex flex-col max-w-md m-auto mt-60 max-h-96">
             <span className="flex ">
                 <span className="animate-ping absolute inline-flex h-60 w-60 rounded-full bg-purple-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
