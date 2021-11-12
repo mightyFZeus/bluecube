@@ -56,32 +56,10 @@ const App = () => {
                     // setError(err);
                 });
             setInput("");
-            localStorage.setItem("input", String(input));
             
         }
     };
-    const submitHandlerPagination = (e) => {
-        const value = e.target.innerHTML;
-            
-        const inputText = localStorage.getItem("input", String(input));
-
-        axios
-            .get(
-                `https://api.unsplash.com/search/photos?query=${inputText}&page=${value}&client_id=o_0bB4EVeMe_U-X_RGn5aPCenTOgSw6pQYzxf8XaFFY&orientation=squarish`
-            )
-            .then((res) => {
-                const main = res.data.results;
-                console.log(main);
-
-                setResult(main);
-                  setLoading(false);
-            })
-            .catch((err) => {
-                console.log(err);
-                // setError(err);
-            });
-        setInput("");
-    };
+ 
  
     if(loading) return (
         <div className="flex flex-col justify-center content-center">
@@ -134,7 +112,6 @@ const App = () => {
                     toggleSideBar={toggleSideBar}
                     toggle={toggle}
                     loading={loading}
-                    submitHandlerPagination={submitHandlerPagination}
                 />
             </div>
         </div>

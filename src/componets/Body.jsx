@@ -19,8 +19,7 @@ const Body = ({
 }) => {
     const { know } = sideBarItems;
 
-    const numberArr = ["1", "2", "3", "4", "5", "6",];
-    if (loading) return <div>loading....</div>;
+ 
 
     return (
         <div className="">
@@ -104,16 +103,7 @@ const Body = ({
                     </div>
                 ))}
             </div>
-            <div className=" text-center gap-5 cursor-pointer mt-6 sm:hidden flex">
-                {numberArr.map((item) => (
-                    <div
-                        key={item}
-                        className=" bg-purple-600 text-white p-1 shadow-lg "
-                    >
-                        <p onClick={submitHandlerPagination}>{item}</p>
-                    </div>
-                ))}
-            </div>
+         
 
             <div className="  lg:grid lg:gap-5 header  lg:mt-8 mt-16 lg:grid-cols-5 text-xs">
                 {result?.map((item) => (
@@ -194,16 +184,7 @@ const Body = ({
                     </div>
                 ))}
             </div>
-            <div className=" text-center gap-5  cursor-pointer  mt-6 hidden xl:flex">
-                {numberArr.map((item) => (
-                    <div
-                        key={item}
-                        className=" bg-purple-600 text-white p-1 shadow-lg "
-                    >
-                        <p onClick={submitHandlerPagination}>{item}</p>
-                    </div>
-                ))}
-            </div>
+           
             <p className="text-center text-gray-400 m-10 lg:mt-20">
                 {" "}
                 &copy; blueCube. All right reserved
