@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import Body from "./componets/Body";
 import Sidebar from "./componets/Sidebar";
+import {Fade} from "react-reveal"
 
 
 const App = () => {
@@ -98,23 +99,27 @@ const App = () => {
 
 
     return (
-        <div className="App lg:px-10 lg:py-6 p-4 lg:mt-8  ">
-            <div className="flex gap-4 bg-white xl:shadow-lg lg:p-10 p-6   justify-center content-center">
-                <div className="hidden xl:block">
-                    <Sidebar />
+        <Fade duration={2000}>
+            <div className="App lg:px-10 lg:py-6 p-4 lg:mt-8  ">
+                <div className="flex gap-4 bg-white xl:shadow-lg lg:p-10 p-6   justify-center content-center">
+                    <div className="hidden xl:block">
+                        <Sidebar />
+                    </div>
+                    <div className="border-r-2 border-gray-300 hidden md:block"></div>
+                    <Fade duration={2000}>
+                        <Body
+                            result={result}
+                            input={input}
+                            setInput={setInput}
+                            submitHandler={submitHandler}
+                            toggleSideBar={toggleSideBar}
+                            toggle={toggle}
+                            loading={loading}
+                        />
+                    </Fade>
                 </div>
-                <div className="border-r-2 border-gray-300 hidden md:block"></div>
-                <Body
-                    result={result}
-                    input={input}
-                    setInput={setInput}
-                    submitHandler={submitHandler}
-                    toggleSideBar={toggleSideBar}
-                    toggle={toggle}
-                    loading={loading}
-                />
             </div>
-        </div>
+        </Fade>
     );
 };
 
