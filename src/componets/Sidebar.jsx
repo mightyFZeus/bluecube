@@ -11,7 +11,7 @@ const Sidebar = () => {
             </p>
             <div>
                 {firstArr.map(({ text, image }) => (
-                    <div className="flex gap-4 text-xs mb-4 text-center px-3 py-1 mt-3 test" key={text}>
+                    <div className="flex gap-4 text-xs mb-4 text-center px-3 py-1 mt-3 sidebar" key={text}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"
@@ -33,7 +33,7 @@ const Sidebar = () => {
             <p className="font-black text-lg mb-6 mt-3">{share}</p>
             <div>
                 {secondArr.map(({ text, image }) => (
-                    <div className="flex gap-4 text-xs mb-4 test px-3 py-1" key={text}>
+                    <div className="flex gap-4 text-xs mb-4 test px-3 py-1 sidebar" key={text}>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-6 w-6"

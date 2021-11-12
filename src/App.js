@@ -18,7 +18,7 @@ const App = () => {
     useEffect(() => {
         axios
             .get(
-                "https://api.unsplash.com/search/photos?query=dogs?&client_id=o_0bB4EVeMe_U-X_RGn5aPCenTOgSw6pQYzxf8XaFFY&orientation=squarish"
+                "https://api.unsplash.com/search/photos?query=men?&client_id=o_0bB4EVeMe_U-X_RGn5aPCenTOgSw6pQYzxf8XaFFY&orientation=squarish"
             )
             .then((res) => {
                 const main = res.data.results;
@@ -66,12 +66,10 @@ const App = () => {
     );
 
     return (
-
-
         <div className="App lg:px-10 lg:py-6 p-4 lg:mt-8  ">
             <div className="flex gap-4 bg-white shadow-lg lg:p-10 p-6  justify-center content-center">
                 <div className="hidden xl:block">
-                    <Sidebar  />
+                    <Sidebar />
                 </div>
                 <div className="border-r-2 border-gray-300 hidden md:block"></div>
                 <Body
@@ -81,8 +79,9 @@ const App = () => {
                     submitHandler={submitHandler}
                     toggleSideBar={toggleSideBar}
                     toggle={toggle}
-      
                 />
+
+              
             </div>
         </div>
     );

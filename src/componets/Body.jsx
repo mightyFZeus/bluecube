@@ -103,13 +103,47 @@ const Body = ({
                     <div
                         key={item.id}
                         className="  flex flex-col mb-5 sm:mb-0 container  "
+                        // onMouseEnter={Test}
                     >
                         <img
                             src={item.urls.small}
                             alt="what"
-                            className="w-full h-full lg:h-44, w-44 rounded-lg image "
+                            className="w-full h-full lg:h-44 rounded-lg image "
                         />
-                        <div className="absolute rounded-lg w-full px-4 overlay">
+
+                        <div className="absolute rounded-lg w-full px-4 overlay like_icon_container ">
+                            <div className="like_icon flex">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-10 w-10  "
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    // stroke={show? "red" :"white"}
+                                    stroke="white"
+                                    // onClick={changeColor}
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={1}
+                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                                    />
+                                </svg>
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="h-10 w-10"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="white"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={1}
+                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                    />
+                                </svg>
+                            </div>
                             <div className="text">
                                 <p className="text-white  capitalize ">
                                     {item.tags[0].title},
@@ -117,7 +151,7 @@ const Body = ({
                                 <p className="text-white  flex gap-1">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="h-4 w-4"
+                                        className="h-4 w-4 "
                                         fill="none"
                                         viewBox="0 0 24 24"
                                         stroke="currentColor"
@@ -143,6 +177,10 @@ const Body = ({
                     </div>
                 ))}
             </div>
+            <p className="text-center text-gray-400 m-10 lg:mt-20">
+                {" "}
+                &copy; blueCube. All right reserved
+            </p>
         </div>
     );
 };
