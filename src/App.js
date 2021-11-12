@@ -4,14 +4,15 @@ import "./App.css";
 import Body from "./componets/Body";
 import Sidebar from "./componets/Sidebar";
 
-import { Link } from "react-router-dom";
+
 const App = () => {
     const [result, setResult] = useState([]);
-    // const [error, setError] = useState("");
+ 
     const [loading, setLoading] = useState(true)
 
     const [input, setInput] = useState("");
     const [toggle, setToggle] = useState(false);
+    
 
     const toggleSideBar = () => {
         setToggle((prevToggle) => !prevToggle);
@@ -24,7 +25,7 @@ const App = () => {
             .then((res) => {
                 const main = res.data.results;
 
-                console.log(main);
+                // console.log(main);
                 setResult(main);
                 setLoading(false)
             })
@@ -44,20 +45,44 @@ const App = () => {
                 )
                 .then((res) => {
                     const main = res.data.results;
-                    console.log(main);
+                    // console.log(main);
                    
 
                     setResult(main);
+                      setLoading(false);
                 })
                 .catch((err) => {
                     console.log(err);
                     // setError(err);
                 });
             setInput("");
+            localStorage.setItem("input", String(input));
             
         }
     };
+    const submitHandlerPagination = (e) => {
+        const value = e.target.innerHTML;
+            
+        const inputText = localStorage.getItem("input", String(input));
 
+        axios
+            .get(
+                `https://api.unsplash.com/search/photos?query=${inputText}&page=${value}&client_id=o_0bB4EVeMe_U-X_RGn5aPCenTOgSw6pQYzxf8XaFFY&orientation=squarish`
+            )
+            .then((res) => {
+                const main = res.data.results;
+                console.log(main);
+
+                setResult(main);
+                  setLoading(false);
+            })
+            .catch((err) => {
+                console.log(err);
+                // setError(err);
+            });
+        setInput("");
+    };
+ 
     if(loading) return (
         <div className="flex flex-col justify-center content-center">
             <span className="flex ">
@@ -93,9 +118,9 @@ const App = () => {
         )
     }
 
+
     return (
         <div className="App lg:px-10 lg:py-6 p-4 lg:mt-8  ">
-          
             <div className="flex gap-4 bg-white xl:shadow-lg lg:p-10 p-6   justify-center content-center">
                 <div className="hidden xl:block">
                     <Sidebar />
@@ -108,9 +133,9 @@ const App = () => {
                     submitHandler={submitHandler}
                     toggleSideBar={toggleSideBar}
                     toggle={toggle}
+                    loading={loading}
+                    submitHandlerPagination={submitHandlerPagination}
                 />
-
-              
             </div>
         </div>
     );
