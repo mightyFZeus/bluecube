@@ -13,9 +13,7 @@ const Body = ({
     submitHandler,
     toggleSideBar,
     toggle,
-    loading,
-   
-    submitHandlerPagination,
+    
 }) => {
     const { know } = sideBarItems;
 
@@ -70,15 +68,16 @@ const Body = ({
                 )}
             </div>
             {toggle && (
-                <Slide right duration={500}>
+               
                     <div className=" xl:hidden  ">
                         <MobileSidebar
                             input={input}
                             setInput={setInput}
                             submitHandler={submitHandler}
+                            toggleSideBar={toggleSideBar}
                         />
                     </div>
-                </Slide>
+              
             )}
 
             <div className="md:flex hidden mt-4 ">
@@ -103,7 +102,6 @@ const Body = ({
                     </div>
                 ))}
             </div>
-         
 
             <div className="  lg:grid lg:gap-5 header  lg:mt-8 mt-16 lg:grid-cols-5 text-xs">
                 {result?.map((item) => (
@@ -184,7 +182,7 @@ const Body = ({
                     </div>
                 ))}
             </div>
-           
+
             <p className="text-center text-gray-400 m-10 lg:mt-20">
                 {" "}
                 &copy; blueCube. All right reserved

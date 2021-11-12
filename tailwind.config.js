@@ -6,6 +6,9 @@ module.exports = {
             colors: {
                 overlay: "rgba(0,0,0,0.5)",
             },
+            minWidth: {
+                33:"33.333%"
+            }
         },
     },
     variants: {

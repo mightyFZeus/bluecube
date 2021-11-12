@@ -14,21 +14,26 @@ const App = () => {
     const [input, setInput] = useState("");
     const [toggle, setToggle] = useState(false);
     
+    
 
     const toggleSideBar = () => {
         setToggle((prevToggle) => !prevToggle);
     };
     useEffect(() => {
+      
         axios
             .get(
                 "https://api.unsplash.com/search/photos?query=men?&client_id=o_0bB4EVeMe_U-X_RGn5aPCenTOgSw6pQYzxf8XaFFY&orientation=squarish"
             )
             .then((res) => {
                 const main = res.data.results;
+                
 
-                // console.log(main);
+
+             
                 setResult(main);
-                setLoading(false)
+                setLoading(false);
+                
             })
             .catch((err) => {
                 console.log(err);
@@ -46,11 +51,12 @@ const App = () => {
                 )
                 .then((res) => {
                     const main = res.data.results;
-                    // console.log(main);
+                 
                    
 
                     setResult(main);
-                      setLoading(false);
+                     setLoading(false);
+                      
                 })
                 .catch((err) => {
                     console.log(err);
