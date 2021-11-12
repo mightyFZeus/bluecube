@@ -4,6 +4,7 @@ import "./App.css";
 import Body from "./componets/Body";
 import Sidebar from "./componets/Sidebar";
 
+import { Link } from "react-router-dom";
 const App = () => {
     const [result, setResult] = useState([]);
     // const [error, setError] = useState("");
@@ -44,6 +45,7 @@ const App = () => {
                 .then((res) => {
                     const main = res.data.results;
                     console.log(main);
+                   
 
                     setResult(main);
                 })
@@ -52,6 +54,7 @@ const App = () => {
                     // setError(err);
                 });
             setInput("");
+            
         }
     };
 
@@ -65,9 +68,35 @@ const App = () => {
         </div>
     );
 
+    if (result.length === 0) {
+        return (
+            <div className="flex justify-center content-center flex-col max-w-xs shadow-lg rounded-lg">
+                <div>
+                    <p>No search Results</p>
+
+                    <button
+                        className="bg-purple-600 text-white px-4 py-2"
+                        onClick={() => window.location.reload(false)}
+                    >
+                        Click to reload!
+                    </button>
+                </div>
+            </div>
+        );
+    }
+
+    if (!result) {
+        return (
+            <div>
+                <p>There is a an error somewhere</p>
+            </div>
+        )
+    }
+
     return (
         <div className="App lg:px-10 lg:py-6 p-4 lg:mt-8  ">
-            <div className="flex gap-4 bg-white shadow-lg lg:p-10 p-6  justify-center content-center">
+          
+            <div className="flex gap-4 bg-white xl:shadow-lg lg:p-10 p-6   justify-center content-center">
                 <div className="hidden xl:block">
                     <Sidebar />
                 </div>

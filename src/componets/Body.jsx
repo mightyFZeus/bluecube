@@ -15,8 +15,11 @@ const Body = ({
 }) => {
     const { know } = sideBarItems;
 
+    
+
     return (
         <div className="">
+            
             <div className="hidden xl:block">
                 <SearchBar
                     input={input}
@@ -97,8 +100,9 @@ const Body = ({
                     </div>
                 ))}
             </div>
-
+           
             <div className="  lg:grid lg:gap-5 header  lg:mt-8 mt-16 lg:grid-cols-5 text-xs">
+                
                 {result?.map((item) => (
                     <div
                         key={item.id}
