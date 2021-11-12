@@ -1,7 +1,6 @@
 import React from "react";
 import { sideBarItems } from "../utils/data";
 import SearchBar from "./SearchBar";
-import { Fade } from "react-reveal";
 
 const Sidebar = ({ input, setInput, submitHandler, toggleSideBar }) => {
     const { share, firstArr, secondArr, logoText } = sideBarItems;

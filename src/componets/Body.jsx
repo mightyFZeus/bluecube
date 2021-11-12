@@ -1,7 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import MobileSidebar from "./Mobile";
-import { Slide } from "react-reveal";
+
 import { sideBarItems } from "../utils/data";
 import "../App.css";
 
