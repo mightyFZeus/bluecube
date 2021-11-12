@@ -68,7 +68,7 @@ const App = () => {
     return (
 
 
-        <div className="App lg:px-10 lg:py-10 p-4 lg:mt-8  ">
+        <div className="App lg:px-10 lg:py-6 p-4 lg:mt-8  ">
             <div className="flex gap-4 bg-white shadow-lg lg:p-10 p-6  justify-center content-center">
                 <div className="hidden xl:block">
                     <Sidebar  />
