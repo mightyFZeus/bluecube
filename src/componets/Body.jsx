@@ -4,7 +4,7 @@ import MobileSidebar from "./Mobile";
 import { Slide } from "react-reveal";
 import { sideBarItems } from "../utils/data";
 import "../App.css";
-import axios from "axios";
+
 
 const Body = ({
     result,
