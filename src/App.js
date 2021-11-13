@@ -42,6 +42,7 @@ const App = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
+        setToggle(false)
         if (input === "") {
             alert("please enter a search value");
         } else {
