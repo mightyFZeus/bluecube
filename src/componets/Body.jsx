@@ -4,6 +4,7 @@ import MobileSidebar from "./Mobile";
 
 import { sideBarItems } from "../utils/data";
 import "../App.css";
+import { Fade } from "react-reveal";
 
 
 const Body = ({
@@ -110,85 +111,87 @@ const Body = ({
                 ))}
             </div>
 
-            <div className="  lg:grid lg:gap-5 header  lg:mt-8 mt-10 lg:grid-cols-5 text-xs">
-                {result?.map((item) => (
-                    <div
-                        key={item.id}
-                        className="  flex flex-col mb-5 sm:mb-0 container  "
-                        // onMouseEnter={Test}
-                    >
-                        <img
-                            src={item.urls.small}
-                            alt="what"
-                            className="w-full h-full lg:h-44 rounded-lg image "
-                        />
+            <Fade duration={2000}>
+                <div className="  lg:grid lg:gap-5 header  lg:mt-8 mt-10 lg:grid-cols-5 text-xs">
+                    {result?.map((item) => (
+                        <div
+                            key={item.id}
+                            className="  flex flex-col mb-5 sm:mb-0 container  "
+                            // onMouseEnter={Test}
+                        >
+                            <img
+                                src={item.urls.small}
+                                alt="what"
+                                className="w-full h-full lg:h-44 rounded-lg image "
+                            />
 
-                        <div className="absolute rounded-lg w-full px-4 overlay like_icon_container ">
-                            <div className="like_icon flex">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-10 w-10  "
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    // stroke={show? "red" :"white"}
-                                    stroke="white"
-                                    // onClick={changeColor}
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={1}
-                                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                                    />
-                                </svg>
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className="h-10 w-10"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke="white"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={1}
-                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                                    />
-                                </svg>
-                            </div>
-                            <div className="text">
-                                <p className="text-white  capitalize ">
-                                    {item.tags[0].title},
-                                </p>
-                                <p className="text-white  flex gap-1">
+                            <div className="absolute rounded-lg w-full px-4 overlay like_icon_container ">
+                                <div className="like_icon flex">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        className="h-4 w-4 "
+                                        className="h-10 w-10  "
                                         fill="none"
                                         viewBox="0 0 24 24"
-                                        stroke="currentColor"
+                                        // stroke={show? "red" :"white"}
+                                        stroke="white"
+                                        // onClick={changeColor}
                                     >
                                         <path
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                                            strokeWidth={1}
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
                                         />
+                                    </svg>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-10 w-10"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="white"
+                                    >
                                         <path
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                             strokeWidth={1}
-                                            d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                                         />
                                     </svg>
-                                    {item.user.first_name},{" "}
-                                    {item.created_at.substring(0, 10)}
-                                </p>
+                                </div>
+                                <div className="text">
+                                    <p className="text-white  capitalize ">
+                                        {item.tags[0].title},
+                                    </p>
+                                    <p className="text-white  flex gap-1">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-4 w-4 "
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                                            />
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={1}
+                                                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                                            />
+                                        </svg>
+                                        {item.user.first_name},{" "}
+                                        {item.created_at.substring(0, 10)}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
+                    ))}
+                </div>
+            </Fade>
 
             <p className="text-center text-gray-400 m-10 lg:mt-20">
                 {" "}

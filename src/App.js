@@ -84,12 +84,12 @@ const App = () => {
 
     if (result.length === 0) {
         return (
-            <div className="flex justify-center content-center flex-col max-w-xs shadow-lg rounded-lg">
-                <div>
+            <div className="flex justify-center mx-auto mt-40 content-center flex-col max-w-sm shadow-lg rounded-lg py-40 px-10 ">
+                <div className="mx-auto">
                     <p>No search Results</p>
 
                     <button
-                        className="bg-purple-600 text-white px-4 py-2"
+                        className="bg-purple-600 text-white px-4 py-2 mt-10 rounded-lg"
                         onClick={() => window.location.reload(false)}
                     >
                         Click to reload!
