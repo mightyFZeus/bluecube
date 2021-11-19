@@ -88,7 +88,7 @@ const Body = ({
                 </div>
             )}
 
-            <div className="md:flex hidden mt-4 ">
+            <div className="xl:flex hidden mt-4 ">
                 {know.map((item) => (
                     <div
                         className="flex  bg-white shadow-lg  border-2 px-10 py-4"
