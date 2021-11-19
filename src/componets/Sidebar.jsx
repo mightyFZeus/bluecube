@@ -5,7 +5,7 @@ import "../App.css"
 const Sidebar = () => {
     const {share, firstArr,secondArr, logoText} = sideBarItems
     return (
-        <div className="flex flex-col justify-center content-center">
+        <div className="flex flex-col justify-center content-center font-bold">
             <p className="text-purple-600 font-black text-3xl mb-10 hidden xl:block">
                 {logoText}
             </p>

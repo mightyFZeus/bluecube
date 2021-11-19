@@ -1,6 +1,6 @@
 import React from "react";
 import { sideBarItems } from "../utils/data";
-import SearchBar from "./SearchBar";
+
 
 const Sidebar = ({ input, setInput, submitHandler, toggleSideBar }) => {
     const { share, firstArr, secondArr, logoText } = sideBarItems;
@@ -12,7 +12,7 @@ const Sidebar = ({ input, setInput, submitHandler, toggleSideBar }) => {
                     style={{ minWidth: "33.3333%" }}
                     onClick={toggleSideBar}
                 ></div>
-                <div className="md-lg:hidden inline-block side-nav mt-0 min-h-screen fixed max-h-screen w-2/3 md:w-1/3 px-3 xs:px-6 bg-white top-0 right-0 z-30">
+                <div className="md-lg:hidden inline-block side-nav mt-0 min-h-screen fixed max-h-screen w-2/3  px-3 xs:px-6 bg-white top-0 right-0 z-10">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-10 w-10 ml-auto mb-4 mt-4"
@@ -29,11 +29,7 @@ const Sidebar = ({ input, setInput, submitHandler, toggleSideBar }) => {
                         />
                     </svg>
                     <div className="">
-                        <SearchBar
-                            input={input}
-                            setInput={setInput}
-                            submitHandler={submitHandler}
-                        />
+                      
 
                         <p className="text-purple-600 font-black text-3xl  hidden md:block">
                             {logoText}

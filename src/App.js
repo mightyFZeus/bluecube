@@ -46,6 +46,7 @@ const App = () => {
         if (input === "") {
             alert("please enter a search value");
         } else {
+            setLoading(true)
             axios
                 .get(
                     `https://api.unsplash.com/search/photos?query=${input}?&client_id=o_0bB4EVeMe_U-X_RGn5aPCenTOgSw6pQYzxf8XaFFY&orientation=squarish`
@@ -55,9 +56,11 @@ const App = () => {
                  
                    
 
-                    setResult(main);
-                     setLoading(false);
-                      
+                    setTimeout(() => {
+                         setLoading(false);
+                    }, 2000)
+                   
+                       setResult(main);
                 })
                 .catch((err) => {
                     console.log(err);
@@ -113,17 +116,28 @@ const App = () => {
                         <Sidebar />
                     </div>
                     <div className="border-r-2 border-gray-300 hidden md:block"></div>
-                    <Fade duration={2000}>
-                        <Body
-                            result={result}
-                            input={input}
-                            setInput={setInput}
-                            submitHandler={submitHandler}
-                            toggleSideBar={toggleSideBar}
-                            toggle={toggle}
-                            loading={loading}
-                        />
-                    </Fade>
+                    {loading && (
+                        <div className="flex flex-col max-w-md m-auto mt-60 max-h-96">
+                            <span className="flex ">
+                                <span className="animate-ping absolute inline-flex h-60 w-60 rounded-full bg-purple-400 opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+                            </span>
+                            <p>Loading, please wait.....</p>
+                        </div>
+                    )}
+                    {!loading && (
+                        <Fade duration={2000}>
+                            <Body
+                                result={result}
+                                input={input}
+                                setInput={setInput}
+                                submitHandler={submitHandler}
+                                toggleSideBar={toggleSideBar}
+                                toggle={toggle}
+                                loading={loading}
+                            />
+                        </Fade>
+                    )}
                 </div>
             </div>
         </Fade>

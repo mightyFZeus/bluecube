@@ -5,8 +5,22 @@ const SearchBar = ({ input, setInput, submitHandler,toggle }) => {
   
     return (
         <div className="flex gap-6">
-            <div className="w-full   shadow-lg rounded-lg px-4 bg-white   py-2">
+            <div className="w-full   shadow-lg rounded-lg px-4 bg-white   py-3">
                 <form className="flex gap-8" onSubmit={submitHandler}>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-10 w-10"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                    </svg>
                     <input
                         type="text"
                         value={input}
@@ -14,10 +28,7 @@ const SearchBar = ({ input, setInput, submitHandler,toggle }) => {
                         placeholder="Find Something...."
                         className="w-full outline-none"
                     />
-                    <button
-                        className="py-1 px-4 text-white bg-purple-600 rounded-lg "
-                     
-                    >
+                    <button className="py-1 hidden xl:block px-2 text-white bg-purple-600 rounded-lg ">
                         Search
                     </button>
                 </form>

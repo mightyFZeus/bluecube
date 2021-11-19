@@ -29,6 +29,7 @@ const Body = ({
                     toggle={toggle}
                 />
             </div>
+
             <div className=" flex justify-between xl:hidden">
                 <p className="text-purple-600 font-black text-3xl">bluecode</p>
 
@@ -67,17 +68,23 @@ const Body = ({
                     </svg>
                 )}
             </div>
+            <div className="sm:hidden block mt-10">
+                <SearchBar
+                    input={input}
+                    setInput={setInput}
+                    submitHandler={submitHandler}
+                    toggle={toggle}
+                />
+            </div>
             {toggle && (
-               
-                    <div className=" xl:hidden  ">
-                        <MobileSidebar
-                            input={input}
-                            setInput={setInput}
-                            submitHandler={submitHandler}
-                            toggleSideBar={toggleSideBar}
-                        />
-                    </div>
-              
+                <div className=" xl:hidden  ">
+                    <MobileSidebar
+                        input={input}
+                        setInput={setInput}
+                        submitHandler={submitHandler}
+                        toggleSideBar={toggleSideBar}
+                    />
+                </div>
             )}
 
             <div className="md:flex hidden mt-4 ">
@@ -103,7 +110,7 @@ const Body = ({
                 ))}
             </div>
 
-            <div className="  lg:grid lg:gap-5 header  lg:mt-8 mt-16 lg:grid-cols-5 text-xs">
+            <div className="  lg:grid lg:gap-5 header  lg:mt-8 mt-10 lg:grid-cols-5 text-xs">
                 {result?.map((item) => (
                     <div
                         key={item.id}
