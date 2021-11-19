@@ -69,7 +69,7 @@ const Body = ({
                     </svg>
                 )}
             </div>
-            <div className="sm:hidden block mt-10">
+            <div className="xl:hidden block mt-10">
                 <SearchBar
                     input={input}
                     setInput={setInput}
